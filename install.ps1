@@ -18,6 +18,7 @@ scoop bucket add nerd-fonts 2>$null
 Write-Host "Installing CLI tools..." -ForegroundColor Yellow
 $tools = @(
     "git",
+    "neovim",
     "eza",
     "bat",
     "ripgrep",
@@ -105,6 +106,15 @@ if (!(Test-Path $themesDir)) {
 }
 Copy-Item "$scriptDir\oh-my-posh\themes\*" $themesDir -Force
 Write-Host "  Copied Oh-My-Posh themes" -ForegroundColor Gray
+
+# Neovim config (LazyVim)
+$nvimDir = "$env:LOCALAPPDATA\nvim"
+if (Test-Path $nvimDir) {
+    Write-Host "  Backing up existing nvim config..." -ForegroundColor Gray
+    Move-Item $nvimDir "$nvimDir.backup.$(Get-Date -Format 'yyyyMMdd-HHmmss')" -Force
+}
+Copy-Item "$scriptDir\nvim" $nvimDir -Recurse -Force
+Write-Host "  Copied Neovim config (LazyVim)" -ForegroundColor Gray
 
 Write-Host "`nInstallation complete!" -ForegroundColor Green
 Write-Host "Please restart your terminal to apply changes." -ForegroundColor Cyan
