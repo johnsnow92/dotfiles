@@ -1,6 +1,6 @@
 # Terminal Master Cheatsheet
 
-> WezTerm + PowerShell + Git - Complete Reference
+> WezTerm + PowerShell + Git + Neovim - Complete Reference
 
 ---
 
@@ -370,6 +370,140 @@ git show <commit>             # Show commit details
 
 ---
 
+# Neovim (LazyVim)
+
+> Leader key: `Space`
+
+## General
+
+| Key | Action |
+|-----|--------|
+| `Space` | Show which-key menu |
+| `Space Space` | Find files |
+| `Ctrl+h/j/k/l` | Navigate windows |
+| `H` / `L` | Previous/next buffer |
+
+## File Navigation
+
+| Key | Action |
+|-----|--------|
+| `Space f f` | Find files |
+| `Space f r` | Recent files |
+| `Space f g` | Live grep (search in files) |
+| `Space f b` | Buffers |
+| `Space e` | File explorer (neo-tree) |
+| `Space /` | Grep (root dir) |
+
+## Buffers & Windows
+
+| Key | Action |
+|-----|--------|
+| `Space b d` | Delete buffer |
+| `Space b b` | Switch buffer |
+| `Space ,` | Switch buffer (with preview) |
+| `Space w d` | Delete window |
+| `Space -` | Split below |
+| `Space \|` | Split right |
+
+## Code / LSP
+
+| Key | Action |
+|-----|--------|
+| `g d` | Goto definition |
+| `g r` | References |
+| `g I` | Goto implementation |
+| `K` | Hover documentation |
+| `Space c a` | Code action |
+| `Space c r` | Rename |
+| `Space c f` | Format |
+| `] d` / `[ d` | Next/prev diagnostic |
+
+## Git
+
+| Key | Action |
+|-----|--------|
+| `Space g g` | Lazygit |
+| `Space g b` | Blame line |
+| `Space g f` | Git files |
+| `Space g s` | Git status |
+| `] h` / `[ h` | Next/prev hunk |
+
+## Search
+
+| Key | Action |
+|-----|--------|
+| `Space s g` | Grep |
+| `Space s w` | Search word under cursor |
+| `Space s s` | Goto symbol |
+| `Space s k` | Keymaps |
+| `Space s h` | Help pages |
+
+## Diagnostics / Trouble
+
+| Key | Action |
+|-----|--------|
+| `Space x x` | Diagnostics (Trouble) |
+| `Space x t` | Todo list |
+
+## UI Toggles
+
+| Key | Action |
+|-----|--------|
+| `Space u f` | Toggle format on save |
+| `Space u w` | Toggle word wrap |
+| `Space u l` | Toggle line numbers |
+| `Space u d` | Toggle diagnostics |
+
+## Terminal
+
+| Key | Action |
+|-----|--------|
+| `Ctrl+/` | Toggle terminal |
+| `Esc Esc` | Normal mode (in terminal) |
+
+## Motions & Editing
+
+| Key | Action |
+|-----|--------|
+| `s` | Flash (jump anywhere) |
+| `g c c` | Comment line |
+| `g c` (visual) | Comment selection |
+| `g s a` | Add surrounding |
+| `g s d` | Delete surrounding |
+
+## Neo-tree (File Explorer)
+
+*Press `Space e` to open*
+
+| Key | Action |
+|-----|--------|
+| `Enter` / `o` | Open file |
+| `a` | Add file/directory |
+| `d` | Delete |
+| `r` | Rename |
+| `H` | Toggle hidden |
+| `q` | Close |
+
+## Telescope (Fuzzy Finder)
+
+| Key | Action |
+|-----|--------|
+| `Ctrl+n/p` | Next/previous item |
+| `Enter` | Confirm |
+| `Ctrl+x` | Open in split |
+| `Ctrl+v` | Open in vsplit |
+| `Esc` | Close |
+
+## Session & Quit
+
+| Key | Action |
+|-----|--------|
+| `Space q q` | Quit all |
+| `Space q s` | Restore session |
+| `Space l` | Lazy (plugin manager) |
+
+---
+
 # Configuration Files
 
 | File | Purpose |
@@ -378,9 +512,12 @@ git show <commit>             # Show commit details
 | `~/OneDrive/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1` | PowerShell profile |
 | `~/.gitconfig` | Git configuration |
 | `~/.config/oh-my-posh/themes/` | Oh-My-Posh themes |
+| `%LOCALAPPDATA%/nvim/` | Neovim config (LazyVim) |
 
 **Reload PowerShell Profile:** `. $PROFILE`
 
 **Reload WezTerm Config:** `Ctrl+Shift+R`
+
+**Reload Neovim Config:** `:source $MYVIMRC` or restart
 
 **Edit Git Config:** `git config --global -e`
